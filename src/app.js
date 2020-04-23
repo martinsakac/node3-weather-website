@@ -61,10 +61,7 @@ app.get('/weather', (req, res) => {
             }
             console.log(forecastData)
             res.send({
-                address: forecastData.location,
-                temperature: forecastData.temperature,
-                precipation: forecastData.precip,
-                forecast: forecastData.temperature + ' degrees Celsius, ' + forecastData.precip + ' % chance of rain',
+                forecast: forecastData.summary + '. ' + forecastData.temperature + ' degrees Celsius, ' + forecastData.precip + ' % chance of rain and currentt humidity of ' + forecastData.humidity + '%.',
                 location,
                 addressQuery: req.query.address
             })

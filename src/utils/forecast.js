@@ -11,9 +11,11 @@ const forecast = (lat, long, callback) => {
             callback('Weather forecast has NOT been fetched for input location. Try again.', undefined)
         } else {
             callback(undefined, {
+                summary: body.current.weather_descriptions[0],
                 location: body.location.name,
                 temperature: body.current.temperature,
-                precip: body.current.precip
+                precip: body.current.precip,
+                humidity: body.current.humidity
             })
         }
     })
